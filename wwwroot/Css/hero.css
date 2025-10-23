@@ -1,0 +1,29 @@
+﻿.hero {
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    display: grid;
+    max-width: 73.125rem;
+    grid-template-columns: 570px 7fr;
+    grid-template-areas: "header ." "text ." "button .";
+    gap: 2.5rem;
+    padding-block: 6.25rem;
+    margin-inline: auto;
+}
+
+.clr-header {
+    color: var(--main-color);
+    grid-area: header;
+}
+
+.clr-text {
+    color: var(--main-color);
+    grid-area: text;
+}
+
+.hero-btn {
+    padding: 1rem 3rem;
+    grid-area: button;
+}
