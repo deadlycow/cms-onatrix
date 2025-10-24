@@ -1,0 +1,172 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    font-family: 'poppins', 'Times New Roman', Times, serif;
+    --main-color: #4F5955;
+    --sub-color-1: #F2EDDC;
+    --sub-color-2: #D9C3A9;
+    --note-1-color: #9C9EA6;
+    --body-text-color: #535656;
+    --profile-card-border: #EAEAEA;
+    --footer-bg: #0E0E0E;
+    --swedbank: #2D303A;
+    --w-light: 300;
+    --w-medium: 500;
+    --w-semibold: 600;
+    --w-bold: 700;
+    --extension-title-size: 70px;
+    --extension-title-weight: var(--w-bold);
+    --heading-01-size: 50px;
+    --heading-01-weight: var(--w-bold);
+    --heading-01-line-height: 60px;
+    --heading-02-size: 40px;
+    --heading-02-weight: var(--w-bold);
+    --heading-02-line-height: 50px;
+    --heading-03-size: 30px;
+    --heading-03-weight: var(--w-bold);
+    --heading-04-size: 25px;
+    --heading-04-weight: var(--w-bold);
+    --heading-05-size: 22px;
+    --heading-05-weight: var(--w-semibold);
+    --heading-06-size: 18px;
+    --heading-06-weight: var(--w-bold);
+    --body-text-size: 14px;
+    --body-text-line-height: 24px;
+    --note-1-size: 13px;
+    --note-2-size: 13px;
+    --note-2-weight: var(--w-semibold);
+    --label-size: 14px;
+    --label-weight: var(--w-bold);
+    --sub-title-1-size: 18px;
+    --sub-title-1-weight: var(--w-medium);
+    --sub-title-2-size: 16px;
+    --sub-title-2-weight: var(--w-bold);
+    --sub-title-3-size: 16px;
+    --sub-title-3-weight: var(--w-medium);
+    --sub-title-4-size: 14px;
+    --sub-title-4-weight: var(--w-semibold);
+    --slide-text-size: 16px;
+    --quote-size: 20px;
+    --quote-weight: var(--w-light);
+    --nav-drop-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+    --req-card-drop-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.102);
+    --letus-card-drop-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.102);
+    --border-radius-3: .1875rem;
+    --line-height-80: 80px;
+    --a-hover-color: #4f5955d7;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    width: fit-content;
+}
+
+.a-btn {
+    background-color: var(--main-color);
+    color: var(--sub-color-1);
+    border-radius: var(--border-radius-3);
+    transition: background-color ease-in-out .2s;
+}
+
+    .a-btn:hover {
+        background-color: var(--a-hover-color);
+    }
+
+h1 {
+    font-size: var(--heading-01-size);
+    font-weight: var(--heading-01-weight);
+    line-height: var(--heading-01-line-height);
+}
+
+h2 {
+    font-size: var(--heading-02-size);
+    font-weight: var(--heading-02-weight);
+    line-height: var(--heading-02-line-height)
+}
+
+h3 {
+    font-size: var(--heading-03-size);
+    font-weight: var(--heading-03-weight);
+}
+
+h4 {
+    font-size: var(--heading-04-size);
+    font-weight: var(--heading-04-weight);
+}
+
+h5 {
+    font-size: var(--heading-05-size);
+    font-weight: var(--heading-05-weight);
+}
+
+h6 {
+    font-size: var(--heading-06-size);
+    font-weight: var(--heading-06-weight);
+}
+
+.c-h6 {
+    font-size: var(--heading-06-size);
+    font-weight: var(--heading-06-weight);
+}
+
+.c-et {
+    font-size: var(--extension-title-size);
+    font-weight: var(--extension-title-weight);
+}
+
+.c-bt {
+    font-size: var(--body-text-size);
+    line-height: var(--body-text-line-height);
+}
+
+.c-note1 {
+    font-size: var(--note-1-size);
+}
+
+.c-note2 {
+    font-size: var(--note-2-size);
+    font-weight: var(--note-2-weight);
+}
+
+.c-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+}
+
+.c-sub-1 {
+    font-size: var(--sub-title-1-size);
+    font-weight: var(--sub-title-1-weight);
+}
+
+.c-sub-2 {
+    font-size: var(--sub-title-2-size);
+    font-weight: var(--sub-title-2-weight);
+}
+
+.c-sub-3 {
+    font-size: var(--sub-title-3-size);
+    font-weight: var(--sub-title-3-weight);
+}
+
+.c-sub-4 {
+    font-size: var(--sub-title-4-size);
+    font-weight: var(--sub-title-4-weight);
+}
+
+.c-slide {
+    font-size: var(--slide-text-size);
+}
+
+.c-quote {
+    font-size: var(--quote-size);
+    font-weight: var(--quote-weight);
+}
