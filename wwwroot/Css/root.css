@@ -10,6 +10,7 @@
     --profile-card-border: #EAEAEA;
     --footer-bg: #0E0E0E;
     --swedbank: #2D303A;
+    --border-color: #EBEBEB;
     --w-light: 300;
     --w-medium: 500;
     --w-semibold: 600;
@@ -54,6 +55,9 @@
     --border-radius-3: .1875rem;
     --line-height-80: 80px;
     --a-hover-color: #4f5955d7;
+    --max-width: 1170px;
+    --btn-font: ''poppins', 'Times New Roman', Times, serif';
+    --btn-hover-reqform: #f2eddcb0;
 }
 
 *,
@@ -169,4 +173,9 @@ h6 {
 .c-quote {
     font-size: var(--quote-size);
     font-weight: var(--quote-weight);
+}
+
+.c-form-p {
+    font-size: var(--note-1-size);
+    font-style: italic;
 }
