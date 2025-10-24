@@ -1,0 +1,24 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!DOCUMENT hmtl>
+<html>
+
+<head lang="eng">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Onatrix @Model?.Value("pageTitle")</title>
+
+	<link rel="stylesheet" href="~/css/root.css" app-append-version="true">
+</head>
+
+<body>
+	@RenderBody()
+</body>
+
+</html>
+</!DOCUMENT>

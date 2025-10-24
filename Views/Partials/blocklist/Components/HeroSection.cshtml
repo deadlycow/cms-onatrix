@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.HeroSection) Model.Content;
+    var settings = Model.Settings as ContentModels.HeroSection;
+}
+
+<link href="~/css/hero.css" rel="stylesheet" />
+
+<div class="hero" style="background-image: url(@content.BgImage!.Url())">
+    <div class="hero-content">
+        <h1 class="clr-header c-et" style="line-height: var(--line-height-80)">@content.Title</h1>
+        <div class="clr-text c-slide">
+            @Html.Raw(content.Text)
+        </div>
+        <a class="a-btn hero-btn c-h6" href="@content.Link!.Url">@content.Link!.Name</a>
+    </div>
+</div>
