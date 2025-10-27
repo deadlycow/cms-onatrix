@@ -46,6 +46,8 @@
     --sub-title-3-weight: var(--w-medium);
     --sub-title-4-size: 14px;
     --sub-title-4-weight: var(--w-semibold);
+    --sub-title-img-size: 16px;
+    --sub-title-img-weight: var(--w-light);
     --slide-text-size: 16px;
     --quote-size: 20px;
     --quote-weight: var(--w-light);
@@ -165,6 +167,12 @@ h6 {
     font-size: var(--sub-title-4-size);
     font-weight: var(--sub-title-4-weight);
 }
+
+.c-sub-img {
+    font-size: var(--sub-title-img-size);
+    font-weight: var(--sub-title-img-weight);
+}
+
 
 .c-slide {
     font-size: var(--slide-text-size);

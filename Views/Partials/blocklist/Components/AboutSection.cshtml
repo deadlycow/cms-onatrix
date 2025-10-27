@@ -5,11 +5,23 @@
     var settings = Model.Settings as ContentModels.AboutSettings;
 }
 
-<link href="~/css/about.css" rel="stylesheet" />
+<link href="~/css/aboutSection.css" rel="stylesheet" />
 <link href="~/css/requestForm.css" rel="stylesheet" />
 
 <section class="about">
-    <div>
+    @* <div> *@
+    @if (content.Image != null)
+    {
+        <div class="about-image-container">
+            <img class="about-image" src="@(content.Image.Url())" alt="@content.Image.Name" />
+            @if (content.SubTitleImage != null)
+            {
+                <span class="about-img-subtitle c-sub-img">@content.SubTitleImage</span>
+            }
+        </div>
+    }
+    <div class="about-content">
+
         @if (settings!.ShowHeader)
         {
             <p class="c-label" style="color:@settings!.HeaderColor">@content.Header</p>
@@ -17,12 +29,6 @@
         @if (settings!.ShowTitle)
         {
             <h2 class="about-spacing" style="color:@settings.TitleColor">@content.Title</h2>
-        }
-        @if (content.Image != null)
-        {
-            <div class="about-image-container">
-                <img class="about-image" src="@content.Image.Url()" alt="@content.Image.Name" />
-            </div>
         }
         <div class="rte-content">
             @if (content.Quote != null)
@@ -36,8 +42,9 @@
             </div>
         </div>
     </div>
-    <div class="about-form-container">
-        @* <form class="requestForm">
+
+    @* <div class="about-form-container">
+        <form class="requestForm">
             <h3>Request a call back</h3>
             <div class="input-group">
                 <p class="c-form-p">
@@ -51,6 +58,6 @@
                 <input type="text" placeholder="Financial consulting" />
                 <button class="c-sub-2" type="submit">Submit</button>
             </div>
-        </form> *@
-    </div>
+        </form>
+    </div> *@
 </section>
