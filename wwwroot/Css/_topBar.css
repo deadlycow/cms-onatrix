@@ -1,0 +1,34 @@
+﻿.topbar {
+    background-color: var(--main-color);
+}
+
+.topbar-container {
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+
+    a:hover {
+    text-decoration: underline var(--color-white);
+}
+}
+
+.topbar-address {
+    color: var(--color-white);
+}
+
+.topbar nav {
+    display: flex;
+
+    a
+{
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border-left: 1px solid var(--border-color-topbar);
+}
+    a:hover {
+        background-color: var(--border-color-topbar);
+    }
+}
+}

@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+}
+
+<link href="~/Css/_topBar.css" rel="stylesheet" asp-append-version="true" />
+
+<div class="topbar">
+    <div class="topbar-container">
+
+        <a href="https://www.google.com/maps?q=@siteSettings!.Address" target="_blank">
+            <p class="topbar-address c-note1">@siteSettings!.Address</p>
+        </a>
+
+        <nav>
+            @if (siteSettings.PlatformList != null)
+            {
+
+                foreach (var item in siteSettings.PlatformList)
+                {
+                    var content = item.Content as Socials;
+                    <a href="@content!.ItemUrl" target="_blank"><img src="@content.ItemIcon!.Url()" /></a>
+                }
+            }
+        </nav>
+    </div>
+</div>
