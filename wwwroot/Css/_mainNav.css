@@ -1,0 +1,36 @@
+﻿.nav-bar {
+    box-shadow: var(--nav-drop-shadow);
+    background-color: var(--color-white);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-bar-container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    padding-block: 1.1875rem;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+    display: flex;
+    list-style: none;
+    gap: 4.6875rem;
+    }
+}
+
+.nav-bar-li a {
+    color: var(--main-color);
+
+  
+}
+
+.nav-bar-li a:hover {
+    color: var(--sub-color-2);
+    text-decoration: underline;
+}
+
+.current a{
+    color: var(--sub-color-2);
+}
