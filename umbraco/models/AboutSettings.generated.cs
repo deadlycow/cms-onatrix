@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>About Page</summary>
-	[PublishedModel("aboutPage")]
-	public partial class AboutPage : PublishedContentModel
+	/// <summary>About Settings</summary>
+	[PublishedModel("aboutSettings")]
+	public partial class AboutSettings : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
-		public new const string ModelTypeAlias = "aboutPage";
+		public new const string ModelTypeAlias = "aboutSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<AboutPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<AboutSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public AboutPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public AboutSettings(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,11 +50,40 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// BlockEditor
+		/// Header color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("blockEditor")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel BlockEditor => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "blockEditor");
+		[ImplementPropertyType("headerColor")]
+		public virtual string HeaderColor => this.Value<string>(_publishedValueFallback, "headerColor");
+
+		///<summary>
+		/// Show Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[ImplementPropertyType("showHeader")]
+		public virtual bool ShowHeader => this.Value<bool>(_publishedValueFallback, "showHeader");
+
+		///<summary>
+		/// Show Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[ImplementPropertyType("showImage")]
+		public virtual bool ShowImage => this.Value<bool>(_publishedValueFallback, "showImage");
+
+		///<summary>
+		/// Show Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[ImplementPropertyType("showTitle")]
+		public virtual bool ShowTitle => this.Value<bool>(_publishedValueFallback, "showTitle");
+
+		///<summary>
+		/// Title color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("titleColor")]
+		public virtual string TitleColor => this.Value<string>(_publishedValueFallback, "titleColor");
 	}
 }

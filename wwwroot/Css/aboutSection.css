@@ -1,0 +1,42 @@
+﻿.about {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-block: 6.25rem 7.875rem;
+    gap: 1.71875rem;
+}
+
+.about-image-container {
+    display: grid;
+    gap: .75rem;
+    max-width: 25rem;
+    
+    span {
+    font-style: italic;
+    color: var(--main-color);
+    }
+}
+
+.about-content {
+    max-width: 42rem;
+}
+
+.about-spacing {
+    padding-block: .3125rem 3rem;
+}
+
+.about-form-container {
+    position: relative;
+}
+
+.about-quote {
+    color: var(--body-text-color);
+    padding-bottom: 1rem;
+}
+
+.about-rte {
+    display: grid;
+    gap: 1.25rem;
+    color: var(--body-text-color);
+}

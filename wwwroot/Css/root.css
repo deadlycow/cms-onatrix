@@ -10,6 +10,7 @@
     --profile-card-border: #EAEAEA;
     --footer-bg: #0E0E0E;
     --swedbank: #2D303A;
+    --border-color: #EBEBEB;
     --w-light: 300;
     --w-medium: 500;
     --w-semibold: 600;
@@ -45,6 +46,8 @@
     --sub-title-3-weight: var(--w-medium);
     --sub-title-4-size: 14px;
     --sub-title-4-weight: var(--w-semibold);
+    --sub-title-img-size: 16px;
+    --sub-title-img-weight: var(--w-light);
     --slide-text-size: 16px;
     --quote-size: 20px;
     --quote-weight: var(--w-light);
@@ -54,6 +57,9 @@
     --border-radius-3: .1875rem;
     --line-height-80: 80px;
     --a-hover-color: #4f5955d7;
+    --max-width: 1170px;
+    --btn-font: ''poppins', 'Times New Roman', Times, serif';
+    --btn-hover-reqform: #f2eddcb0;
 }
 
 *,
@@ -162,6 +168,12 @@ h6 {
     font-weight: var(--sub-title-4-weight);
 }
 
+.c-sub-img {
+    font-size: var(--sub-title-img-size);
+    font-weight: var(--sub-title-img-weight);
+}
+
+
 .c-slide {
     font-size: var(--slide-text-size);
 }
@@ -169,4 +181,9 @@ h6 {
 .c-quote {
     font-size: var(--quote-size);
     font-weight: var(--quote-weight);
+}
+
+.c-form-p {
+    font-size: var(--note-1-size);
+    font-style: italic;
 }
