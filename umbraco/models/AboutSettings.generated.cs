@@ -72,6 +72,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool ShowImage => this.Value<bool>(_publishedValueFallback, "showImage");
 
 		///<summary>
+		/// Show Request Form
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[ImplementPropertyType("showRequestForm")]
+		public virtual bool ShowRequestForm => this.Value<bool>(_publishedValueFallback, "showRequestForm");
+
+		///<summary>
 		/// Show Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]

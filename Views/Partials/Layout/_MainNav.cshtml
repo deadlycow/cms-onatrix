@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IVariationContextAccessor VariationContextAccessor
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var selection = Model.Root().Children().Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+}
+
+<link href="~/Css/_mainNav.css" rel="stylesheet" asp-append-version="true" />
+
+<nav class="nav-bar">
+    <div class="nav-bar-container">
+        <a href="/">
+            <img src="@siteSettings?.Logo?.Url()" alt="Onatrix logo" />
+        </a>
+
+        @if (selection?.Length > 0)
+        {
+            <ul>
+                @foreach (var item in selection)
+                {
+                    <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null) nav-bar-li c-sub-2">
+                        <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    </li>
+                }
+            </ul>
+        }
+        <div class="search">
+            <img src="/icon/search.svg" />
+        </div>
+    </div>
+</nav>

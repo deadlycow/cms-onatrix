@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var selection = Model.Ancestors().ToArray();
+}
+
+<link href="~/Css/_breadCrumb.css" rel="stylesheet" asp-append-version="true" />
+
+@if (selection?.Length > 0)
+{
+    <div class="breadcrumb">
+        <img src="/icon/rectangle-left.svg" class="bg-object-1" />
+        <img src="/icon/rectangle-right.svg" class="bg-object-2" />
+        <h2 class="breadcrumb-title">@Model.Name</h2>
+        <ul>
+            @foreach (var item in selection.OrderBy(x => x.Level))
+            {
+                <li><a href="@item.Url(PublishedUrlProvider)" class="c-bt">@item.Name</a> <img class="divider" src="/icon/chevron.svg" alt="Divider" /></li>
+            }
+            <li class="active c-bt">@Model.Name</li>
+        </ul>
+    </div>
+}
