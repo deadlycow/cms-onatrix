@@ -63,6 +63,7 @@
     --max-width: 1170px;
     --btn-font: ''poppins', 'Times New Roman', Times, serif';
     --btn-hover-reqform: #f2eddcb0;
+    --card-bg-color: var(--color-white);
 }
 
 *,

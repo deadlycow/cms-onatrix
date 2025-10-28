@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection) Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+
+    var siteRoot = Umbraco.AssignedContentItem.Root();
+    // var siteRoot = current.Root();
+    var services = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = services?.Children<ServiceDetails>()?.ToList() ?? [];
+    // var items = services.Children<ServiceDetails>().OrderByDescending(x => x.CreateDate).ToList();
+}
+
+<link href="~/css/serviceSection.css" rel="stylesheet" />
+
+<section class="services" style="background-color: @settings?.BgColor">
+    <div class="services-container">
+        <div class="services-header">
+            @if (settings!.ShowHeader)
+            {
+                <p class="c-label">@content.ServiceHeader</p>
+            }
+            <h2>@content.ServiceTitle</h2>
+        </div>
+        <div class="services-card-container">
+            @foreach (var item in items)
+            {
+                <a href="@item.Url()">
+                    <div class="services-card">
+                        <h5>@item.Name</h5>
+                        <img src="@item.ServiceDetailsImg?.Url()" />
+                        <p class="c-bt">@item.ServiceDetailsText</p>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</section>

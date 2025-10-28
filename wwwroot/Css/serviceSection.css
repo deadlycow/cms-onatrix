@@ -1,0 +1,60 @@
+﻿.services {
+    padding-block: 5.3125rem 6.25rem;
+}
+
+.services-container {
+    max-width: var(--max-width);
+    display: grid;
+    gap: 1.875rem;
+    margin-inline: auto;
+}
+
+.services-header {
+    text-align: center;
+
+    p {
+        color: var(--sub-color-2);
+    }
+
+    h2 {
+        line-height: unset;
+        color: var(--main-color);
+        max-width: 35.9rem;
+        margin-inline: auto;
+    }
+}
+
+.services-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1.875rem;
+
+    a {
+        color: var(--main-color);
+        transition: all .2s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+}
+
+.services-card {
+    background-color: var(--card-bg-color);
+    display: grid;
+    border: solid 1px var(--profile-card-border);
+
+    h5 {
+        padding: 1.5625rem 1.875rem;
+    }
+
+    img {
+
+        object-fit: cover;
+    }
+
+    p {
+        padding: 1.25rem 1.875rem;
+        color: var(--body-text-color);
+    }
+}
