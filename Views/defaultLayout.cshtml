@@ -15,8 +15,7 @@
 
     <title>Onatrix@(isHome ? "" : $" - {pageTitle}")</title>
 
-    <link rel="stylesheet" href="~/css/root.css" app-append-version="true">
-    <link rel="stylesheet" href="~/css/rte.css" app-append-version="true">
+    <link rel="stylesheet" href="~/css/root.css" asp-append-version="true">
 </head>
 
 <body>
@@ -26,7 +25,7 @@
     <main>
         @RenderBody()
     </main>
+    <script src="/js/highlight.js" asp-append-version="true"></script>
 </body>
-
 </html>
 </!DOCUMENT>

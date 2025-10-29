@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TrustedSection) Model.Content;
+}
+
+<link href="~/css/trustedSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="trusted-container" style="background-image: url(@content.TrustedBgImg?.Url())">
+    <h2 class="color-last-words">@content.TrustedTitle</h2>
+    @Html.Raw(content.TrustedText)
+    <div>
+        <a class="a-btn hero-btn c-sub-2" href="@content.TrustedLink?.Url">@content.TrustedLink?.Name</a>
+    </div>
+    <img src="@content.TrustedImage?.Url()" />
+</section>

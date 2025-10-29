@@ -5,9 +5,9 @@
     var settings = Model.Settings as ContentModels.HeroSection;
 }
 
-<link href="~/css/hero.css" rel="stylesheet" />
+<link href="~/css/heroSection.css" rel="stylesheet" asp-append-version="true"/>
 
-<div class="hero" style="background-image: url(@content.BgImage!.Url())">
+<div class="hero" style="background-image: url(@content.BgImage?.Url())">
     <div class="hero-content">
         <h1 class="clr-header c-et" style="line-height: var(--line-height-80)">@content.Title</h1>
         <div class="clr-text c-slide">
