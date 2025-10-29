@@ -20,6 +20,8 @@
     --w-bold: 700;
     --extension-title-size: 70px;
     --extension-title-weight: var(--w-bold);
+    --heading-extreme-size: 100px;
+    --heading-extreme-weight: var(var(--w-semibold));
     --heading-01-size: 50px;
     --heading-01-weight: var(--w-bold);
     --heading-01-line-height: 60px;
@@ -95,6 +97,11 @@ h1 {
     font-size: var(--heading-01-size);
     font-weight: var(--heading-01-weight);
     line-height: var(--heading-01-line-height);
+}
+
+.c-h1{
+    font-size: var(--heading-extreme-size);
+    font-weight: var(--heading-extreme-weight);
 }
 
 h2 {
