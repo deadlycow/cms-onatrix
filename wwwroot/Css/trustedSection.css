@@ -1,0 +1,30 @@
+﻿.trusted-container {
+  display: grid;
+  place-self: center;
+  place-items: center;
+  max-width: var(--max-width);
+  padding-top: 6.8125rem;
+  text-align: center;
+
+  background-position:  0 169px;
+  background-repeat: no-repeat;
+
+  h2 {
+    max-width: 40rem;
+    line-height: unset;
+  }
+
+  p {
+    max-width: 43rem;
+    color: var(--body-text-color);
+    padding-block: 1.875rem 2.1875rem;
+  }
+
+  img {
+    padding-top: 5.6875rem;
+  }
+}
+
+.highlighted {
+  color: var(--sub-color-2);
+}

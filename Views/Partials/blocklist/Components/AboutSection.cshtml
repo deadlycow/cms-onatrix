@@ -6,7 +6,6 @@
 }
 
 <link href="~/css/aboutSection.css" rel="stylesheet" />
-<link href="~/css/requestForm.css" rel="stylesheet" />
 
 <section class="about">
     @if (content.Image != null)
@@ -20,7 +19,6 @@
         </div>
     }
     <div class="about-content">
-
         @if (settings!.ShowHeader)
         {
             <p class="c-label" style="color:@settings!.HeaderColor">@content.Header</p>
@@ -30,13 +28,7 @@
             <h2 class="about-spacing" style="color:@settings.TitleColor">@content.Title</h2>
         }
         <div class="rte-content">
-            @if (content.Quote != null)
-            {
-                <div class="about-quote c-quote">
-                    @content.Quote
-                </div>
-            }
-            <div class="about-rte c-bt">
+            <div class="about-rte">
                 @Html.Raw(content.Text)
             </div>
         </div>
