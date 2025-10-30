@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var settings = Umbraco.ContentAtRoot().OfType<SiteSettings>().FirstOrDefault();
+}
+
+<link href="~/css/_footer.css" rel="stylesheet" asp-append-version="true"/>
+
+<footer>
+    <p class="color-last c-bt">@settings?.SiterFooter</p>
+</footer>

@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.BrandsSection) Model.Content;
+}
+
+<link href="~/css/brandsSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="brands">
+    <div class="brands-container">
+        @if (content.BlockEditor != null && content.BlockEditor.Any())
+        {
+            @foreach (var items in content.BlockEditor)
+            {
+                var item = items.Content as Brands;
+                @if (item?.BrandImg != null)
+                {
+                    <img src="@item.BrandImg.Url()" alt="@item?.BrandName" />
+                }
+            }
+        }
+    </div>
+</section>

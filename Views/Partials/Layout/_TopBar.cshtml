@@ -1,10 +1,9 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-    var rootContent = Umbraco.ContentAtRoot();
-    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+    var siteSettings = Umbraco.ContentAtRoot().OfType<SiteSettings>().FirstOrDefault();
 }
 
-<link href="~/Css/_topBar.css" rel="stylesheet" asp-append-version="true" />
+<link href="~/css/_topBar.css" rel="stylesheet" asp-append-version="true" />
 
 <div class="topbar">
     <div class="topbar-container">
