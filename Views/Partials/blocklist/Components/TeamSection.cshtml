@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TeamSection) Model.Content;
+}
+
+<link href="~/css/teamSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="team">
+    <p class="c-label">@content.TeamHeader</p>
+    <h2>@content.TeamTitle</h2>
+    <div class="team-card-container">
+        @if (content.BlockEditor != null && content.BlockEditor.Any())
+        {
+            @foreach (var teamMember in content.BlockEditor)
+            {
+                var member = teamMember.Content as Profile;
+                <div class="profile-card">
+                    @if (member?.ProfileImg != null)
+                    {
+                        <img src="@member.ProfileImg?.Url()" alt="@member?.ProfileName" />
+                    }
+                    <h5>@member?.ProfileName</h5>
+                    <p class="c-note1">@member?.ProfileRole</p>
+                </div>
+            }
+        }
+    </div>
+</section>

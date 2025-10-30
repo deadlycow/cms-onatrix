@@ -1,0 +1,9 @@
+﻿.team {
+  display: grid;
+  place-items: center;
+}
+
+.team-card-container {
+  display: grid;
+  
+}
