@@ -63,7 +63,7 @@
     --line-height-80: 80px;
     --a-hover-color: #4f5955d7;
     --max-width: 1170px;
-    --btn-font: ''poppins', 'Times New Roman', Times, serif';
+    --btn-font: '' poppins', ' Times New Roman', Times, serif';
     --btn-hover-reqform: #f2eddcb0;
     --card-bg-color: var(--color-white);
 }
@@ -89,9 +89,9 @@ a {
     transition: background-color ease-in-out .2s;
 }
 
-    .a-btn:hover {
-        background-color: var(--a-hover-color);
-    }
+.a-btn:hover {
+    background-color: var(--a-hover-color);
+}
 
 h1 {
     font-size: var(--heading-01-size);
@@ -99,7 +99,7 @@ h1 {
     line-height: var(--heading-01-line-height);
 }
 
-.c-h1{
+.c-h1 {
     font-size: var(--heading-extreme-size);
     font-weight: var(--heading-extreme-weight);
 }
@@ -184,7 +184,6 @@ h6 {
     font-weight: var(--sub-title-img-weight);
 }
 
-
 .c-slide {
     font-size: var(--slide-text-size);
 }
@@ -197,4 +196,8 @@ h6 {
 .c-form-p {
     font-size: var(--note-1-size);
     font-style: italic;
+}
+
+.highlighted {
+  color: var(--sub-color-2);
 }
