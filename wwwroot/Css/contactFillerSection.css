@@ -1,0 +1,56 @@
+.contactFiller {
+  padding-top: 2.3125rem;
+}
+
+.contactFiller-container {
+  display: grid;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  gap: 6.25rem;
+  grid-template-columns: 1fr 1fr;
+
+  h2 {
+    color: var(--main-color);
+    padding-bottom: 1.875rem;
+  }
+}
+
+.contactFiller-container:last-child {
+  place-items: center;
+}
+
+.group {
+  display: grid;
+  padding: 0 0 1.875rem 1.4rem;
+
+  gap: .3125rem;
+
+  .c-sub-4 {
+    color: var(--main-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .c-bt {
+    color: var(--body-text-color);
+  }
+
+  .icon-location::before {
+    content: url(../icon/address.svg);
+  }
+
+  .icon-phone::before {
+    content: url(../icon/phone.svg);
+  }
+  .icon-email::before{
+    content: url(../icon/email.svg)
+  }
+
+  .icon-location::before,
+  .icon-phone::before,
+  .icon-email::before {
+    position: absolute;
+    left: -1.4rem;
+  }
+}

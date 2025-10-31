@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactFillerSection) Model.Content;
+    var settings = Model.Settings as ContentModels.ContactFillerSettings;
+    var globalSettings = Umbraco.ContentAtRoot().OfType<ContentModels.SiteSettings>().FirstOrDefault();
+}
+
+<link href="~/css/contactFillerSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="contactFiller" style="background-color: @settings?.Bgcolor">
+    <div class="contactFiller-container">
+        <img src="@content.ContactFillerImg?.Url()" alt="" />
+        <div>
+            <h2>@content.ContactFillerTitle</h2>
+            <div class="group">
+                <p class="c-sub-4 icon-location">Office location</p>
+                <p class="c-bt">@globalSettings?.Address</p>
+            </div>
+            <div class="group">
+                <p class="c-sub-4 icon-phone">Phone number</p>
+                <p class="c-bt">@globalSettings?.Phone</p>
+            </div>
+            <div class="group">
+                <p class="c-sub-4 icon-email">E-mail address</p>
+                <p class="c-bt"><i>@globalSettings?.Email</i></p>
+            </div>
+        </div>
+    </div>
+</section>
