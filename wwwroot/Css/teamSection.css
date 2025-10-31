@@ -1,0 +1,45 @@
+﻿.team {
+  display: grid;
+  place-items: center;
+  padding-block: 7.375rem 5.3125rem;
+
+  .c-label {
+    color: var(--sub-color-2);
+  }
+
+  h2 {
+    max-width: 36rem;
+    color: var(--main-color);
+    padding-block: .3125rem 1.875rem;
+    text-align: center;
+  }
+}
+
+.first-row {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 1.875rem;
+}
+
+.rest {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 3.375rem;
+  gap: 1.875rem;
+}
+
+.profile-card {
+  border: solid 1px var(--border-color);
+
+  div {
+    padding: 1.3125rem 1.5625rem 1.125rem;
+
+    h5 {
+      color: var(--main-color);
+    }
+
+    p {
+      color: var(--note-1-color);
+    }
+  }
+}
