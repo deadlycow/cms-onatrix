@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ReviewSection) Model.Content;
+}
+
+<link href="~/css/reviewSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="review">
+    <div class="review-container">
+        <p class="c-label">@content.ReviewHeader</p>
+        <h2>@content.ReviewTitle</h2>
+        @if (content.BlockEditor != null && content.BlockEditor.Any())
+            @foreach (var item in content.BlockEditor)
+            {
+                var reviewItem = item.Content as Review;
+                <p class="c-quote">@reviewItem?.ReviewText?.ToString()</p>
+                @for (int i = 0; i < reviewItem?.ReviewRating; i++)
+                {
+                    <img src="~/icon/star.svg" alt="Star Filled" class="star-icon" />
+                }
+                <p class="c-bt">@reviewItem?.ReviewName</p>
+                <p class="company">@reviewItem?.ReviewCompanyName</p>
+            }
+    </div>
+    @if (content.ReviewSideImg != null)
+    {
+        <img src="@content.ReviewSideImg.Url()" alt="@content.ReviewSideImg.Name" />
+    }
+</section>
