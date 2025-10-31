@@ -9,21 +9,45 @@
 <section class="team">
     <p class="c-label">@content.TeamHeader</p>
     <h2>@content.TeamTitle</h2>
-    <div class="team-card-container">
-        @if (content.BlockEditor != null && content.BlockEditor.Any())
-        {
-            @foreach (var teamMember in content.BlockEditor)
+    @if (content.BlockEditor != null && content.BlockEditor.Any())
+    {
+        <div class="first-row">
+
+            @for (int i = 0; i < Math.Min(3, content.BlockEditor.Count()); i++)
             {
-                var member = teamMember.Content as Profile;
+                var teamMember = content.BlockEditor[i];
+                var member = teamMember.Content as ContentModels.Profile;
                 <div class="profile-card">
                     @if (member?.ProfileImg != null)
                     {
                         <img src="@member.ProfileImg?.Url()" alt="@member?.ProfileName" />
                     }
-                    <h5>@member?.ProfileName</h5>
-                    <p class="c-note1">@member?.ProfileRole</p>
+                    <div>
+                        <h5>@member?.ProfileName</h5>
+                        <p class="c-note1">@member?.ProfileRole </p>
+                    </div>
                 </div>
             }
+        </div>
+        @if (content.BlockEditor.Count() > 3)
+        {
+            <div class="rest">
+                @for (int i = 3; i < content.BlockEditor.Count(); i++)
+                {
+                    var teamMember = content.BlockEditor[i];
+                    var member = teamMember.Content as ContentModels.Profile;
+                    <div class="profile-card">
+                        @if (member?.ProfileImg != null)
+                        {
+                            <img src="@member.ProfileImg?.Url()" alt="@member?.ProfileName" />
+                        }
+                        <div>
+                            <h5>@member?.ProfileName</h5>
+                            <p class="c-note1">@member?.ProfileRole </p>
+                        </div>
+                    </div>
+                }
+            </div>
         }
-    </div>
+    }
 </section>
