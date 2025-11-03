@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.MapSection) Model.Content;
+}
+<link href="~/css/mapSection.css" rel="stylesheet" asp-append-version="true" />
+
+<section class="map">
+    <div class="map-bg" style="background-image: url(@content.MapImg?.Url())"></div>
+    <partial name="Partials/Forms/_RequestFormLarge" />
+</section>

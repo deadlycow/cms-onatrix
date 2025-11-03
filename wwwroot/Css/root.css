@@ -200,5 +200,30 @@ h6 {
 }
 
 .highlighted {
-  color: var(--sub-color-2);
+    color: var(--sub-color-2);
+}
+
+input {
+    border: 1px solid var(--border-color);
+    color: var(--note-1-color);
+    padding: 1rem 1.3125rem;
+}
+
+input::placeholder {
+    color: var(--note-1-color);
+    font-style: italic;
+}
+
+button {
+    border: none;
+    padding-block: .875rem;
+    background-color: var(--sub-color-1);
+    color: var(--main-color);
+    font-family: var(--btn-font);
+    cursor: pointer;
+    transition: background-color ease .2s;
+}
+
+button:hover {
+    background-color: var(--btn-hover-reqform);
 }
