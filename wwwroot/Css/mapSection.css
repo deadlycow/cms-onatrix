@@ -1,0 +1,18 @@
+.map {
+  height: 54.03125rem;
+  display: grid;
+  place-items: end center;
+  position: relative;
+}
+
+.map-bg {
+  position: absolute;
+  inset: 0;
+  height: 86%;
+  width: 100%;
+  z-index: -1;
+}
+
+.brands {
+  padding: 3.125rem !important;
+}

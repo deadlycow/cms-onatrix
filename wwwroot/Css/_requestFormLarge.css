@@ -1,0 +1,38 @@
+.requestFormLarge {
+  background-color: var(--color-white);
+  padding: 3.90625rem 4.84375rem 4.375rem;
+  box-shadow: var(--letus-card-drop-shadow);
+  text-align: center;
+  border-radius: 3px;
+  min-width: 73.125rem;
+
+
+  p:first-child {
+    color: var(--sub-color-2);
+  }
+
+  .c-bt {
+    color: var(--body-text-color);
+    font-style: italic;
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+
+  h2 {
+    max-width: 30rem;
+    margin-inline: auto;
+    padding-bottom: 1.875rem;
+    color: var(--main-color);
+  }
+
+  .input-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    padding-block: 1.5625rem 1.25rem;
+  }
+
+  .req-L {
+    padding-inline: 3rem;
+  }
+}
