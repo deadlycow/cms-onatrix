@@ -3,6 +3,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
+
+  img { 
+    place-self: end;
+  }
 }
 
 .review-container {
@@ -17,6 +21,7 @@
   h2 {
     color: var(--main-color);
     padding-bottom: 1.8125rem;
+    max-width: 25rem;
   }
 
   img {
