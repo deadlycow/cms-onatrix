@@ -1,5 +1,11 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetails>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "defaultLayout.cshtml";
+    Layout = "defaultLayout.cshtml";
 }
+
+
+<section>
+    <p>@Html.Raw(Model.ServiceDetailsRte)</p>
+    @Html.GetBlockListHtml(Model.BlockEditor);
+</section>

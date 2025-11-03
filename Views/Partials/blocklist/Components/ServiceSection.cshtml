@@ -5,10 +5,8 @@
     var settings = Model.Settings as ContentModels.ServiceSettings;
 
     var siteRoot = Umbraco.AssignedContentItem.Root();
-    // var siteRoot = current.Root();
     var services = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
     var items = services?.Children<ServiceDetails>()?.ToList() ?? [];
-    // var items = services.Children<ServiceDetails>().OrderByDescending(x => x.CreateDate).ToList();
 }
 
 <link href="~/css/serviceSection.css" rel="stylesheet" asp-append-version="true"/>
