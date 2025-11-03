@@ -23,8 +23,6 @@
   display: grid;
   padding: 0 0 1.875rem 1.4rem;
 
-  gap: .3125rem;
-
   .c-sub-4 {
     color: var(--main-color);
     position: relative;
@@ -43,7 +41,8 @@
   .icon-phone::before {
     content: url(../icon/phone.svg);
   }
-  .icon-email::before{
+
+  .icon-email::before {
     content: url(../icon/email.svg)
   }
 

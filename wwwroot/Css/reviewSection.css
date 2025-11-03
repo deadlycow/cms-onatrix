@@ -1,0 +1,46 @@
+.review {
+  background-color: var(--color-white-90);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+
+  img { 
+    place-self: end;
+  }
+}
+
+.review-container {
+  max-width: 37rem;
+  margin-left: auto;
+
+  .c-label {
+    color: var(--sub-color-2);
+    padding-bottom: .3125rem;
+  }
+
+  h2 {
+    color: var(--main-color);
+    padding-bottom: 1.8125rem;
+    max-width: 25rem;
+  }
+
+  img {
+    padding-block: 1.25rem 1.5625rem;
+  }
+  
+  .c-quote {
+    color: var(--review-color);
+    font-style: italic;
+  }
+
+  .c-bt,
+  .company {
+    color: var(--swedbank);
+  }
+
+  .company {
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: .5rem;
+  }
+}
