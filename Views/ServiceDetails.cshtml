@@ -4,8 +4,29 @@
     Layout = "defaultLayout.cshtml";
 }
 
+<link rel="stylesheet" href="/css/serviceDetails.css" asp-append-version="true" />
 
-<section>
-    <p>@Html.Raw(Model.ServiceDetailsRte)</p>
-    @Html.GetBlockListHtml(Model.BlockEditor);
+<section class="service-details">
+    <div class="service-content">
+
+        <aside>
+            @if (Model.AsideImg != null && Model.AsideText != null && Model.AsideTitle != null)
+            {
+                <h5>@Model.AsideTitle</h5>
+                <div class="img-size-3">
+                    <img src="@Model.AsideImg?.Url()" alt="@Model.AsideImg?.Name" />
+                </div>
+                <p class="c-bt">@Model.AsideText</p>
+            }
+            <partial name="Partials/Forms/_SupportForm" />
+        </aside>
+        <div class="line"></div>
+        <div class="rte-container">
+            <img src="@Model.ServiceDetailsImg?.Url()" alt="@Model.ServiceDetailsImg?.Name" />
+            @Html.Raw(Model.ServiceDetailsRte)
+        </div>
+    </div>
+    <partial name="Partials/Forms/_QuestionForm" />
+    @Html.GetBlockListHtml(Model.BlockEditor)
+
 </section>

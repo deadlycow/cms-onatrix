@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Service Details</summary>
 	[PublishedModel("serviceDetails")]
-	public partial class ServiceDetails : PublishedContentModel
+	public partial class ServiceDetails : PublishedContentModel, IAside
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -80,5 +80,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("serviceDetailsText")]
 		public virtual string ServiceDetailsText => this.Value<string>(_publishedValueFallback, "serviceDetailsText");
+
+		///<summary>
+		/// asideImg
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideImg")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AsideImg => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideImg(this, _publishedValueFallback);
+
+		///<summary>
+		/// asideText
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideText")]
+		public virtual string AsideText => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideText(this, _publishedValueFallback);
+
+		///<summary>
+		/// asideTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideTitle")]
+		public virtual string AsideTitle => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideTitle(this, _publishedValueFallback);
 	}
 }

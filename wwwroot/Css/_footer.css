@@ -1,6 +1,10 @@
 footer {
-  text-align: center;
   color: var(--main-color);
   background-color: var(--footer-bg);
   padding-block: 1.1875rem;
+
+  p {
+    max-width: var(--max-width);
+    margin-inline: auto;
+  }
 }
