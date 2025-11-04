@@ -1,0 +1,49 @@
+.support {
+  padding: 1.25rem 1.25rem 1.875rem;
+  display: grid;
+  gap: .625rem;
+  background-color: var(--main-color);
+  border-radius: 3px;
+  margin-top: 2.8125rem;
+  position: relative;
+
+  .support-title {
+    color: var(--sub-color-1);
+  }
+
+  .support-text {
+    color: var(--color-white);
+  }
+
+  form {
+    padding-top: 1.875rem;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .email-icon{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .email-icon::after {
+    content: url('../icon/email.svg');
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .support-bg-icon {
+    position: absolute;
+    width: 10.25rem;
+    right: -.5rem;
+    bottom: 0;
+  }
+}

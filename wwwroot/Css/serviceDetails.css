@@ -1,0 +1,41 @@
+﻿.service-details {
+  display: grid;
+}
+
+.service-content {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 306px auto 1fr;
+  padding-block: 3.625rem;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    h5 {
+      color: var(--main-color);
+    }
+
+    p {
+      color: var(--body-text-color);
+    }
+  }
+}
+
+.line {
+  border-left: 1px solid var(--profile-card-border);
+  height: 100%;
+  margin-inline: 3.25rem;
+}
+
+.img-size-3 {
+  height: 168px;
+  width: 300px;
+}

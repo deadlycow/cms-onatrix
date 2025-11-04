@@ -1,0 +1,48 @@
+.questionForm {
+  max-width: var(--max-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-block: 0 4.8125rem;
+
+  h4 {
+    color: var(--main-color);
+  }
+
+  form {
+    display: grid;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  div {
+    display: flex;
+    gap: 1.875rem;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  textarea {
+    height: 10.9rem;
+    border: 1px solid var(--profile-card-border);
+    padding: 1rem 1.25rem;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  textarea::placeholder {
+
+    color: var(--note-1-color);
+    font-style: italic;
+  }
+
+  button {
+    background-color: var(--main-color);
+    color: var(--color-white);
+    width: fit-content;
+    padding-inline: 2.5rem;
+    border-radius: 3px;
+  }
+}

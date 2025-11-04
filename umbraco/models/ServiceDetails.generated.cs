@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Service Details</summary>
 	[PublishedModel("serviceDetails")]
-	public partial class ServiceDetails : PublishedContentModel
+	public partial class ServiceDetails : PublishedContentModel, IAside
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// BlockEditor
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("blockEditor")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel BlockEditor => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "blockEditor");
+
+		///<summary>
 		/// Details Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
@@ -58,11 +66,43 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ServiceDetailsImg => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "serviceDetailsImg");
 
 		///<summary>
+		/// serviceDetailsRte
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("serviceDetailsRte")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ServiceDetailsRte => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "serviceDetailsRte");
+
+		///<summary>
 		/// Details Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("serviceDetailsText")]
 		public virtual string ServiceDetailsText => this.Value<string>(_publishedValueFallback, "serviceDetailsText");
+
+		///<summary>
+		/// asideImg
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideImg")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AsideImg => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideImg(this, _publishedValueFallback);
+
+		///<summary>
+		/// asideText
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideText")]
+		public virtual string AsideText => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideText(this, _publishedValueFallback);
+
+		///<summary>
+		/// asideTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("asideTitle")]
+		public virtual string AsideTitle => global::Umbraco.Cms.Web.Common.PublishedModels.Aside.GetAsideTitle(this, _publishedValueFallback);
 	}
 }
