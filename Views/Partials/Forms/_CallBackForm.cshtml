@@ -1,0 +1,22 @@
+﻿@using Onatrix.Controllers
+@model Onatrix.Models.CallBackModel;
+
+<link href="/css/_callbackForm.css" rel="stylesheet" asp-append-version="true" />
+@using (Html.BeginUmbracoForm<FormController>(nameof(FormController.CallBackSubmit)))
+{
+    <div class="requestForm">
+        <h3>Request a call back</h3>
+        <div class="input-group">
+            <p class="c-form-p">
+                Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                excepteur sint
+                occaecat
+            </p>
+            <input asp-for="Name" type="text" placeholder="Name" />
+            <input asp-for="Email" type="text" placeholder="Email address" />
+            <input asp-for="PhoneNumber" type="text" placeholder="Phone" />
+            <input type="text" placeholder="Financial consulting" />
+            <button class="c-sub-2" type="submit">Submit</button>
+        </div>
+    </div>
+}

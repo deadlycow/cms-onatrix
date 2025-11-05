@@ -1,13 +1,18 @@
-﻿<link rel="stylesheet" href="/css/_QuestionForm.css" asp-append-version="true" />
+﻿@using Onatrix.Controllers;
+@model Onatrix.Models.QuestionModel;
 
-<section class="questionForm">
-    <h4>Have a question?</h4>
-    <form novalidate>
-        <div>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
+<link rel="stylesheet" href="/css/_QuestionForm.css" asp-append-version="true" />
+@using (Html.BeginUmbracoForm<FormController>(nameof(FormController.QuestionSubmit)))
+{
+    <section class="questionForm">
+        <h4>Have a question?</h4>
+        <div class="form-container">
+            <div>
+                <input asp-for="Name" type="text" placeholder="Name" />
+                <input asp-for="Email" type="text" placeholder="Email" />
+            </div>
+            <textarea asp-for="Question" type="text" placeholder="Question"></textarea>
+            <button type="submit">Submit</button>
         </div>
-        <textarea type="text" placeholder="Question"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</section>
+    </section>
+}

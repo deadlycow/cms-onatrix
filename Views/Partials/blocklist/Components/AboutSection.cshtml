@@ -1,11 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Onatrix.Models;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.AboutSection) Model.Content;
     var settings = Model.Settings as ContentModels.AboutSettings;
 }
 
-<link href="~/css/aboutSection.css" rel="stylesheet" asp-append-version="true"/>
+<link href="~/css/aboutSection.css" rel="stylesheet" asp-append-version="true" />
 
 <section class="about">
     @if (content.Image != null)
@@ -36,7 +37,7 @@
     @if (settings.ShowRequestForm)
     {
         <div class="about-form-container">
-            <partial name="Partials/Forms/_RequestForm" />
+            <partial name="Partials/Forms/_CallBackForm" model="new CallBackModel()" />
         </div>
     }
 </section>

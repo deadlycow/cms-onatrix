@@ -8,7 +8,7 @@
     color: var(--main-color);
   }
 
-  form {
+  .form-container {
     display: grid;
     gap: 1.25rem;
     padding-top: 1.25rem;
