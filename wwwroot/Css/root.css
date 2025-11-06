@@ -67,6 +67,7 @@
     --max-width: 1170px;
     --btn-font: '' poppins', ' Times New Roman', Times, serif';
     --btn-hover-reqform: #f2eddcb0;
+    --btn-hover-question: hsl(156, 49%, 38%);
     --card-bg-color: var(--color-white);
 }
 
@@ -76,6 +77,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.group {
+    position: relative;
+    width: 100%;
 }
 
 a {
@@ -238,4 +244,21 @@ button:hover {
     li {
         color: var(--sub-color-2);
     }
+}
+
+.field-validation-error {
+    position: absolute;
+    font-size: 12px;
+    right: 0;
+    bottom: -1.5rem;
+    color: rgba(255, 0, 0, 0.774);
+    background-color: white;
+    padding-inline: .25rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 0, 0, 0.774);
+}
+
+.field-validation-error::before {
+    content: '\2715';
+    padding-right: .25rem;
 }

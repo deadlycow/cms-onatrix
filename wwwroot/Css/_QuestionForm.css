@@ -14,7 +14,7 @@
     padding-top: 1.25rem;
   }
 
-  div {
+  .group-container {
     display: flex;
     gap: 1.875rem;
   }
@@ -30,6 +30,7 @@
     padding: 1rem 1.25rem;
     border-radius: 3px;
     outline: none;
+    width: 100%;
   }
 
   textarea::placeholder {
@@ -40,9 +41,18 @@
 
   button {
     background-color: var(--main-color);
-    color: var(--color-white);
+    color: var(--sub-color-1);
     width: fit-content;
     padding-inline: 2.5rem;
     border-radius: 3px;
+  }
+  button:hover {
+    background-color: var(--btn-hover-question);
+  }
+
+  .field-validation-error {
+    bottom: unset;
+    top: .1rem;
+    right: .1rem;
   }
 }

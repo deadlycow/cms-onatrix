@@ -88,7 +88,7 @@ public class FormService(ServiceContext services) : IFormService
         );
 
       submission.SetValue("questionSubmissionName", form.Name);
-      submission.SetValue("questionSubmissionEmail", form.Email);
+      submission.SetValue("questionSubmissionEmail", form.QEmail);
       submission.SetValue("questionSubmissionText", form.Question);
       var result = contentService.Save(submission);
       if (!result.Success)

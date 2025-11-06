@@ -26,26 +26,34 @@ public class FormController(
     {
       return CurrentUmbracoPage();
     }
-    var success = _formService.CreateSupportRequest(model);
 
-    TempData["success"] = "Your request has been submitted!";
+    var success = _formService.CreateSupportRequest(model);
+    if (success)
+      TempData["success"] = "Thank you! We'll get back to you soon.";
+
     return RedirectToCurrentUmbracoPage();
   }
-  public IActionResult CallBackSubmit(CallBackModel form) {
+  public IActionResult CallBackSubmit(CallBackModel form)
+  {
     if (!ModelState.IsValid)
     {
       return CurrentUmbracoPage();
     }
     var success = _formService.CreateCallBackRequest(form);
+    if (success)
+      TempData["success"] = "Thank you for your question. We'll get back to you soon.";
     return RedirectToCurrentUmbracoPage();
   }
-  public IActionResult QuestionSubmit(QuestionModel form) {
+  public IActionResult QuestionSubmit(QuestionModel form)
+  {
     if (!ModelState.IsValid)
     {
       return CurrentUmbracoPage();
     }
 
     var success = _formService.CreateQuestionRequest(form);
-    return RedirectToCurrentUmbracoPage();
+    if (success)
+      TempData["QuestionSuccess"] = "Thank you for your question. We'll get back to you soon.";
+    return CurrentUmbracoPage();
   }
 }

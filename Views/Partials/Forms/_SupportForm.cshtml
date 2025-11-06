@@ -10,11 +10,10 @@
         <p class="c-bt support-text">online support 24/7, we are here to help you</p>
         <div class="support-form">
             <input asp-for="Email" type="text" placeholder="E-mail address" />
-            <span asp-validation-for="Email"></span>
+            <span asp-validation-for="Email">@TempData["success"]</span>
             <button type="submit" name="Submit">
                 <img src="/icon/email.svg" alt="Mail icon" />
             </button>
         </div>
-        @* <input type="submit" name="Submit" value="Submit" /> *@
     </div>
 }

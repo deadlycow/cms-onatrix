@@ -19,7 +19,7 @@
   place-items: center;
 }
 
-.group {
+.contactFiller .group {
   display: grid;
   padding: 0 0 1.875rem 1.4rem;
 
