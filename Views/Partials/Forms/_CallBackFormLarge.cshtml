@@ -1,19 +1,59 @@
-﻿
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Onatrix.Models.CallBackModel>;
+@using Onatrix.Controllers
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var formSettings = Umbraco.ContentAtRoot().OfType<ContentModels.FormSettings>().FirstOrDefault();
+}
+
 <link href="/css/_callbackFormLarge.css" rel="stylesheet" asp-append-version="true" />
-<div class="requestFormLarge">
-    <p class="c-label">REQUEST A CALL BACK</p>
-    <h2>Let us know about your next project</h2>
-    <p class="c-bt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
-    <form novalidate>
+@using (Html.BeginUmbracoForm<FormController>(nameof(FormController.CallBackSubmit)))
+{
+    <div class="requestFormLarge">
+        <p class="c-label">@formSettings?.CallBackHeader</p>
+        <h2>@formSettings?.CallBackTitle</h2>
+        <p class="c-bt">@formSettings?.CallBackText </p>
         <div class="input-group">
-            <input class="" type="text" placeholder="Name" />
-            <input type="text" placeholder="Phone" />
-            <input type="text" placeholder="Email" />
-            <input type="text" hidden />
-            <select>
-                <option value="" selected>Financial consulting</option>
-            </select>
+            <div class="group">
+                <input asp-for="Name" type="text" placeholder="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="group">
+                <input asp-for="PhoneNumber" type="text" placeholder="Phone" />
+                <span asp-validation-for="PhoneNumber"></span>
+            </div>
+            <div class="group">
+                <input asp-for="Email" type="text" placeholder="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="group">
+                <div class="select-wrapper">
+                    <select asp-for="Option">
+                        <option value="" disabled selected>Select a callback reason</option>
+                        @{
+                            if (formSettings?.CallBackOptions != null)
+                            {
+                                foreach (var option in formSettings.CallBackOptions)
+                                {
+                                    <option value="@option">@option</option>
+                                }
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="Option"></span>
+                </div>
+            </div>
         </div>
-        <button class="a-btn req-L c-sub-2" type="submit">Submit</button>
-    </form>
-</div>
+        <button class="a-btn req-L c-sub-2" type="submit">
+            @{
+                if (TempData["CallBackSuccess"] != null)
+                {
+                    <span>@TempData["CallBackSuccess"]</span>
+                }
+                else
+                {
+                    @:Submit
+                }
+            }
+        </button>
+    </div>
+}

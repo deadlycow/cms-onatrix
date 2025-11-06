@@ -35,4 +35,8 @@
   .req-L {
     padding-inline: 3rem;
   }
+
+  .field-validation-error {
+    bottom: -1.25rem;
+  }
 }

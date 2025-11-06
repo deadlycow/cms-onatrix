@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Call Back Submission</summary>
-	[PublishedModel("callbackSubmission")]
-	public partial class CallbackSubmission : PublishedContentModel
+	/// <summary>Form Settings</summary>
+	[PublishedModel("formSettings")]
+	public partial class FormSettings : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
-		public new const string ModelTypeAlias = "callbackSubmission";
+		public new const string ModelTypeAlias = "formSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<CallbackSubmission, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<FormSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public CallbackSubmission(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public FormSettings(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,35 +50,35 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Email
+		/// Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackEmail")]
-		public virtual string CallbackEmail => this.Value<string>(_publishedValueFallback, "callbackEmail");
+		[ImplementPropertyType("callBackHeader")]
+		public virtual string CallBackHeader => this.Value<string>(_publishedValueFallback, "callBackHeader");
 
 		///<summary>
-		/// Name
+		/// Options
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackName")]
-		public virtual string CallbackName => this.Value<string>(_publishedValueFallback, "callbackName");
+		[ImplementPropertyType("callBackOptions")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> CallBackOptions => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "callBackOptions");
 
 		///<summary>
-		/// Option
+		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callBackOption")]
-		public virtual string CallBackOption => this.Value<string>(_publishedValueFallback, "callBackOption");
+		[ImplementPropertyType("callBackText")]
+		public virtual string CallBackText => this.Value<string>(_publishedValueFallback, "callBackText");
 
 		///<summary>
-		/// Phone
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackPhone")]
-		public virtual string CallbackPhone => this.Value<string>(_publishedValueFallback, "callbackPhone");
+		[ImplementPropertyType("callBackTitle")]
+		public virtual string CallBackTitle => this.Value<string>(_publishedValueFallback, "callBackTitle");
 	}
 }

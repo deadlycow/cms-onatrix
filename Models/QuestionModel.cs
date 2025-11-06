@@ -4,7 +4,8 @@ namespace Onatrix.Models;
 public class QuestionModel
 {
   [Required(ErrorMessage = "Name is required.")]
-  public string Name { get; set; } = null!;
+  [MinLength(2, ErrorMessage = "At least 2 characters.")]
+  public string? Name { get; set; }
 
   [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Please enter a valid email address.")]
   [Required]

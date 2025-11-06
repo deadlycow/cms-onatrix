@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Onatrix.Models
 @{
     var content = (ContentModels.MapSection) Model.Content;
 }
@@ -7,5 +8,5 @@
 
 <section class="map">
     <div class="map-bg" style="background-image: url(@content.MapImg?.Url())"></div>
-    <partial name="Partials/Forms/_CallBackFormLarge" />
+    <partial name="Partials/Forms/_CallBackFormLarge" model="new CallBackModel()"/>
 </section>

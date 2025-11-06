@@ -4,30 +4,29 @@ using System.Diagnostics;
 using Umbraco.Cms.Core.Services;
 
 namespace Onatrix.Services;
-public class FormService(ServiceContext services) : IFormService
+public class FormService(IContentService service) : IFormService
 {
-  private readonly ServiceContext _services = services;
+  private readonly IContentService _service = service;
 
   public bool CreateSupportRequest(SupportModel form)
   {
     if (form == null || string.IsNullOrWhiteSpace(form.Email))
       return false;
 
-    var contentService = _services.ContentService;
-    var parent = contentService!.GetRootContent().FirstOrDefault(x => x.Name == "Support");
+    var parent = _service!.GetRootContent().FirstOrDefault(x => x.Name == "Support");
     if (parent == null)
       return false;
 
     try
     {
-      var submission = contentService.Create(
+      var submission = _service.Create(
           name: $"{DateTime.Now:yyyy-MM-dd HH:mm} :{Guid.NewGuid().ToString("N")[..4]}",
           parentId: parent.Id,
           documentTypeAlias: "supportSubmission"
       );
 
       submission.SetValue("supportSubmissionEmail", form.Email);
-      var result = contentService.Save(submission);
+      var result = _service.Save(submission);
       if (!result.Success)
         return false;
 
@@ -44,21 +43,23 @@ public class FormService(ServiceContext services) : IFormService
     if (form == null)
       return false;
 
-    var contentService = _services.ContentService;
-    var parent = contentService!.GetRootContent().FirstOrDefault(x => x.Name == "Call Backs");
+    var parent = _service!.GetRootContent().FirstOrDefault(x => x.Name == "Call Backs");
     if (parent == null)
       return false;
 
     try
     {
-      var submission = contentService.Create(
+      var submission = _service.Create(
         name: $"{DateTime.Now:yyyy-MM-dd HH:mm} :{Guid.NewGuid().ToString("N")[..4]}",
         parentId: parent.Id,
         documentTypeAlias: "callBackSubmission"
         );
 
-      submission.SetValue("callBackSubmission", form);
-      var result = contentService.Save(submission);
+      submission.SetValue("callBackName", form.Name);
+      submission.SetValue("callBackPhone", form.PhoneNumber);
+      submission.SetValue("callBackEmail", form.Email);
+      submission.SetValue("callBackOption", form.Option);
+      var result = _service.Save(submission);
       if (!result.Success)
         return false;
 
@@ -75,13 +76,12 @@ public class FormService(ServiceContext services) : IFormService
     if (form == null)
       return false;
 
-    var contentService = _services.ContentService;
-    var parent = contentService!.GetRootContent().FirstOrDefault(x => x.Name == "Questions");
+    var parent = _service!.GetRootContent().FirstOrDefault(x => x.Name == "Questions");
     if (parent == null)
       return false;
     try
     {
-      var submission = contentService.Create(
+      var submission = _service.Create(
         name: $"{DateTime.Now:yyyy-MM-dd HH:mm} :{Guid.NewGuid().ToString("N")[..4]}",
         parentId: parent.Id,
         documentTypeAlias: "questionSubmission"
@@ -90,7 +90,7 @@ public class FormService(ServiceContext services) : IFormService
       submission.SetValue("questionSubmissionName", form.Name);
       submission.SetValue("questionSubmissionEmail", form.QEmail);
       submission.SetValue("questionSubmissionText", form.Question);
-      var result = contentService.Save(submission);
+      var result = _service.Save(submission);
       if (!result.Success)
         return false;
 
