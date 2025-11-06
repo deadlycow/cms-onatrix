@@ -24,20 +24,28 @@
     border-radius: 3px;
   }
 
-  .email-icon{
+  .support-form {
     position: relative;
     display: inline-block;
     width: 100%;
-  }
-  
-  .email-icon::after {
-    content: url('../icon/email.svg');
-    height: 2rem;
-    width: 2rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+
+    >button {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: background-color ease .2s;
+      padding-inline: 1rem;
+    }
+
+    >button img {
+      transition: all .2s ease-in-out;
+    }
+    
+    >button:hover img {
+      transform: scale(1.7);
+    }
   }
 
   .support-bg-icon {

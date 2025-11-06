@@ -1,13 +1,38 @@
-﻿<link rel="stylesheet" href="/css/_QuestionForm.css" asp-append-version="true" />
+﻿@using Onatrix.Controllers;
+@model Onatrix.Models.QuestionModel;
 
-<section class="questionForm">
-    <h4>Have a question?</h4>
-    <form novalidate>
-        <div>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
+<link rel="stylesheet" href="/css/_QuestionForm.css" asp-append-version="true" />
+@using (Html.BeginUmbracoForm<FormController>(nameof(FormController.QuestionSubmit)))
+{
+    <section class="questionForm" id="questionSection">
+        <h4>Have a question?</h4>
+        <div class="form-container">
+            <div class="group-container">
+                <div class="group">
+                    <input asp-for="Name" type="text" placeholder="Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="group">
+                    <input asp-for="QEmail" type="text" placeholder="Email" />
+                    <span asp-validation-for="QEmail"></span>
+                </div>
+            </div>
+            <div class="group">
+                <textarea asp-for="Question" type="text" placeholder="Question"></textarea>
+                <span asp-validation-for="Question"></span>
+            </div>
+            <button type="submit" class="c-sub-2">
+                @{
+                    if (TempData["QuestionSuccess"] != null)
+                    {
+                        <span>@TempData["QuestionSuccess"]</span>
+                    }
+                    else
+                    {
+                        @:Submit
+                    }
+                }
+            </button>
         </div>
-        <textarea type="text" placeholder="Question"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</section>
+    </section>
+}

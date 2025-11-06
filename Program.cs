@@ -1,4 +1,9 @@
+using Onatrix.Interfaces;
+using Onatrix.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IFormService, FormService>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -8,19 +13,20 @@ builder.CreateUmbracoBuilder()
 
 WebApplication app = builder.Build();
 
+       
 await app.BootUmbracoAsync();
 
 
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
-        u.UseBackOffice();
-        u.UseWebsite();
+      u.UseBackOffice();
+      u.UseWebsite();
     })
     .WithEndpoints(u =>
     {
-        u.UseBackOfficeEndpoints();
-        u.UseWebsiteEndpoints();
+      u.UseBackOfficeEndpoints();
+      u.UseWebsiteEndpoints();
     });
 
 await app.RunAsync();

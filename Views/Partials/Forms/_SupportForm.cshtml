@@ -1,12 +1,19 @@
-﻿<link rel="stylesheet" href="/css/_supportForm.css" asp-append-version="true" />
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Onatrix.Models.SupportModel>;
+@using Onatrix.Controllers;
 
-<div class="support">
-    <img class="support-bg-icon" src="/icon/Mail.svg" />
-    <h5 class="support-title">How can we help you?</h5>
-    <p class="c-bt support-text">online support 24/7, we are here to help you</p>
-    <form novalidate>
-        <div class="email-icon">
-            <input type="text" placeholder="E-mail address" />
+<link rel="stylesheet" href="/css/_supportForm.css" asp-append-version="true" />
+@using (Html.BeginUmbracoForm<FormController>(nameof(FormController.SupportSubmit)))
+{
+    <div class="support">
+        <img class="support-bg-icon" src="/icon/Mail.svg" />
+        <h5 class="support-title">How can we help you?</h5>
+        <p class="c-bt support-text">online support 24/7, we are here to help you</p>
+        <div class="support-form">
+            <input asp-for="Email" type="text" placeholder="E-mail address" />
+            <span asp-validation-for="Email">@TempData["SupportSuccess"]</span>
+            <button type="submit" name="Submit">
+                <img src="/icon/email.svg" alt="Mail icon" />
+            </button>
         </div>
-    </form>
-</div>
+    </div>
+}

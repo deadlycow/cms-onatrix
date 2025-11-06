@@ -1,11 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetails>;
+@using Onatrix.Models;
+
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     Layout = "defaultLayout.cshtml";
 }
 
 <link rel="stylesheet" href="/css/serviceDetails.css" asp-append-version="true" />
-
 <section class="service-details">
     <div class="service-content">
 
@@ -18,7 +19,7 @@
                 </div>
                 <p class="c-bt">@Model.AsideText</p>
             }
-            <partial name="Partials/Forms/_SupportForm" />
+            <partial name="Partials/Forms/_SupportForm" model="new SupportModel()" />
         </aside>
         <div class="line"></div>
         <div class="rte-container">
@@ -26,7 +27,7 @@
             @Html.Raw(Model.ServiceDetailsRte)
         </div>
     </div>
-    <partial name="Partials/Forms/_QuestionForm" />
+    <partial name="Partials/Forms/_QuestionForm" model="new QuestionModel()" />
     @Html.GetBlockListHtml(Model.BlockEditor)
 
 </section>
