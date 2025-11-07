@@ -11,10 +11,10 @@
     display: grid;
     gap: .75rem;
     max-width: 25rem;
-    
+
     span {
-    font-style: italic;
-    color: var(--main-color);
+        font-style: italic;
+        color: var(--main-color);
     }
 }
 
@@ -39,4 +39,30 @@
     display: grid;
     gap: 1.25rem;
     color: var(--body-text-color);
+}
+
+@media (width <=991px) {
+    .about {
+        grid-template-columns: 1fr;
+        padding: 2.25rem .5rem 2.875rem .5rem;
+        gap: 1rem;
+    }
+
+    .about-content {
+
+        >p,
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .about-form-container {
+        position: unset;
+    }
+}
+
+@media (width <=576px) {
+    .about {
+        padding-bottom: 0;
+    }
 }

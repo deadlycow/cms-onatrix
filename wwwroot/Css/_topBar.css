@@ -10,8 +10,8 @@
     margin-inline: auto;
 
     a:hover {
-    text-decoration: underline var(--color-white);
-}
+        text-decoration: underline var(--color-white);
+    }
 }
 
 .topbar-address {
@@ -21,17 +21,23 @@
 .topbar nav {
     display: flex;
 
-    a
-{
-    padding: 1rem 1rem;
-    cursor: pointer;
-    border-left: 1px solid var(--border-color-topbar);
-}
-a:last-child {
-    border-right: 1px solid var(--border-color-topbar);
-}
+    a {
+        padding: 1rem 1rem;
+        cursor: pointer;
+        border-left: 1px solid var(--border-color-topbar);
+    }
+
+    a:last-child {
+        border-right: 1px solid var(--border-color-topbar);
+    }
+
     a:hover {
         background-color: var(--border-color-topbar);
     }
 }
+
+@media (width <=992px) {
+    .topbar {
+        padding-left: .5rem;
+    }
 }

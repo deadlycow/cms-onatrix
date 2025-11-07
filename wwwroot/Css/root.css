@@ -240,7 +240,7 @@ select {
     z-index: 1;
 }
 
-select:hover { 
+select:hover {
     background-color: #f7f7f777;
 }
 
@@ -298,3 +298,11 @@ button:hover {
     content: '\2715';
     padding-right: .25rem;
 }
+
+/* @media (width <= 991px) {
+    html,body {
+        overflow: auto;
+    }
+} */
+
+/* @media (width <=576px) {} */
