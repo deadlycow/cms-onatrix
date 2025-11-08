@@ -42,10 +42,29 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    width: clamp(27rem, 32vw, 38.5rem);
 }
 
 .bg-object-2 {
     position: absolute;
     right: 0;
     top: -1rem;
+    width: clamp(27rem, 44.271vw, 53.125rem);
+}
+
+.bg-object-1,
+.bg-object-2 {
+    max-width: 100%;
+}
+
+@media (width <=991px) {
+    .breadcrumb {
+        padding-block: 2rem;
+    }
+}
+
+@media (width <=576px) {
+    .breadcrumb {
+        padding-bottom: 5rem;
+    }
 }

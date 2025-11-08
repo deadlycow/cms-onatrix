@@ -48,6 +48,10 @@
         gap: 1rem;
     }
 
+    .about-image-container {
+        display: none;
+    }
+
     .about-content {
 
         >p,
