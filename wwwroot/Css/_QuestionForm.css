@@ -45,6 +45,7 @@
     padding-inline: 2.5rem;
     border-radius: 3px;
   }
+
   button:hover {
     background-color: var(--btn-hover-question);
   }
@@ -53,5 +54,14 @@
     bottom: unset;
     top: .1rem;
     right: .1rem;
+  }
+}
+
+@media (width <=991px) {
+  .questionForm {
+    max-width: var(--max-width);
+    width: 100%;
+    margin-inline: auto;
+    padding: 0 .5rem 2.8125rem;
   }
 }

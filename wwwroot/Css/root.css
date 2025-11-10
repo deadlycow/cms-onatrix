@@ -298,11 +298,3 @@ button:hover {
     content: '\2715';
     padding-right: .25rem;
 }
-
-/* @media (width <= 991px) {
-    html,body {
-        overflow: auto;
-    }
-} */
-
-/* @media (width <=576px) {} */

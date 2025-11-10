@@ -2,6 +2,8 @@
   display: grid;
   place-items: center;
   padding-block: 7.375rem 5.3125rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
 
   .c-label {
     color: var(--sub-color-2);
@@ -17,13 +19,13 @@
 
 .first-row {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
   column-gap: 1.875rem;
 }
 
 .rest {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
   padding-top: 3.375rem;
   gap: 1.875rem;
 }
@@ -31,7 +33,11 @@
 .profile-card {
   border: solid 1px var(--border-color);
 
-  div {
+  >img {
+    width: 100%;
+  }
+
+  .profile-text {
     padding: 1.3125rem 1.5625rem 1.125rem;
 
     h5 {
@@ -41,5 +47,46 @@
     p {
       color: var(--note-1-color);
     }
+  }
+}
+
+@media (width <=991px) {
+  .team {
+    padding-block: 3.375rem 2.3125rem;
+  }
+
+  .first-row {
+    column-gap: .5rem;
+  }
+
+  .rest {
+    padding-top: 3.375rem;
+    gap: .5rem;
+  }
+
+  .profile-card {
+
+    .profile-text {
+      padding: 1rem;
+
+      h5 {
+        color: var(--main-color);
+      }
+
+      p {
+        color: var(--note-1-color);
+      }
+    }
+  }
+}
+
+@media (width <=576px) {
+  .first-row {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    gap: .5rem;
+  }
+
+  .rest {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
   }
 }
