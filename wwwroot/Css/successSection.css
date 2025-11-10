@@ -47,3 +47,22 @@
     font-weight: var(--heading-05-weight);
   }
 }
+
+@media (width <=991px) {
+  .success-container {
+    padding-top: 3.25rem;
+
+    >div>img {
+      width: 100%;
+    }
+  }
+
+  .stories-continer {
+    display: grid;
+    grid-template-columns: unset;
+  }
+
+  .story-card {
+    max-width: unset;
+  }
+}

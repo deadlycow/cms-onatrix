@@ -240,7 +240,7 @@ select {
     z-index: 1;
 }
 
-select:hover { 
+select:hover {
     background-color: #f7f7f777;
 }
 

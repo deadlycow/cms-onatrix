@@ -39,3 +39,18 @@
   height: 168px;
   width: 300px;
 }
+
+@media (width <=991px) {
+  .service-content {
+    grid-template-columns: unset;
+    padding-block: .625rem;
+    padding-inline: .5rem;
+
+    aside {
+      display: none;
+    }
+  }
+  .line { 
+    display: none;
+  }
+}

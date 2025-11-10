@@ -25,7 +25,7 @@
     color: var(--main-color);
   }
 
-  .input-group{
+  .input-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
@@ -38,5 +38,26 @@
 
   .field-validation-error {
     bottom: -1.25rem;
+  }
+}
+
+
+@media (width <=991px) {
+  .requestFormLarge {
+    padding: 2.90625rem 2.84375rem 2.375rem;
+    text-align: unset;
+    min-width: unset;
+  }
+}
+
+@media (width <=576px) {
+  .requestFormLarge {
+    padding-block: 1rem;
+
+    .input-group {
+      grid-template-columns: unset;
+      gap: 1.25rem;
+      padding-block: 1.5625rem 1.25rem;
+    }
   }
 }

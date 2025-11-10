@@ -6,7 +6,7 @@
   padding-top: 6.8125rem;
   text-align: center;
 
-  background-position:  0 10.5625rem;
+  background-position: center 10.5625rem;
   background-repeat: no-repeat;
 
   h2 {
@@ -22,5 +22,21 @@
 
   img {
     padding-top: 5.6875rem;
+    width: 100%;
+  }
+}
+
+@media (width <=991px) {
+  .trusted-container {
+    padding: 2rem .5rem 0 .5rem;
+    background-size: 100%;
+  }
+}
+
+@media (width <=576px) {
+  .trusted-container {
+    img {
+      padding-top: 3rem;
+    }
   }
 }

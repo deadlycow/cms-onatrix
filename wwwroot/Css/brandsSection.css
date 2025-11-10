@@ -7,5 +7,21 @@
   margin-inline: auto;
   display: flex;
   justify-content: center;
-  gap: 4.375rem;
+  gap: clamp(1rem, 3vw ,4.375rem);
+}
+
+@media (width <=991px) {
+  .brands {
+    padding: 2.375rem .5rem 2.125rem .5rem;
+  }
+
+  .brands-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    align-items: center;
+    
+    >img {
+      width: 100%;
+    }
+  }
 }

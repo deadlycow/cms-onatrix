@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
 
-  img { 
+  img {
     place-self: end;
   }
 }
@@ -27,7 +27,7 @@
   img {
     padding-block: 1.25rem 1.5625rem;
   }
-  
+
   .c-quote {
     color: var(--review-color);
     font-style: italic;
@@ -42,5 +42,27 @@
     font-size: 20px;
     line-height: 24px;
     padding-top: .5rem;
+  }
+}
+
+@media (width <=991px) {
+  .review {
+    grid-template-columns: 1fr;
+    place-items: unset;
+    padding-block: 1.5rem 0;
+
+    >img {
+      width: 100%;
+      place-self: unset;
+    }
+  }
+
+  .review-container {
+    text-align: center;
+    padding-bottom: 1rem;
+
+    >h2 {
+      margin-inline: auto;
+    }
   }
 }

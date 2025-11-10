@@ -27,3 +27,43 @@
     padding: 1rem 3rem;
     grid-area: button;
 }
+
+
+@media (width <=991px) {
+    .hero {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: var(--color-white-90);
+    }
+
+    .hero-content {
+        
+        padding: 3.25rem .5rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: unset;
+        row-gap: 1rem;
+        margin-inline: auto;
+
+        h1 {
+            font-size: 2rem;
+            max-width: 16rem;
+            line-height: normal !important;
+        }
+        >div>p {
+            max-width: 25rem;
+        }
+    }
+
+    .clr-header,
+    .clr-text,
+    .hero-btn {
+        grid-area: unset;
+    }
+}
+
+@media (width <=576px) {
+    .hero-content {
+        padding-block: 6.5rem .5rem;
+    }
+}

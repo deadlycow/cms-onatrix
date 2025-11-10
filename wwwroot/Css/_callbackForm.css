@@ -25,3 +25,10 @@
         color: var(--body-text-color);
     }
 }
+
+@media (width <= 991px) {
+   .requestForm{
+    position: unset;
+    justify-self: center;
+   }
+}
