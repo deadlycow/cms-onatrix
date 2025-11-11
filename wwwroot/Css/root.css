@@ -298,3 +298,15 @@ button:hover {
     content: '\2715';
     padding-right: .25rem;
 }
+
+.valid::after {
+    content: '\2714';
+    width: 1rem;
+    height: 1rem;
+    left: -1.3rem;
+    font-size: 1.5rem;
+    top: 25%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: #03ff0097;
+}

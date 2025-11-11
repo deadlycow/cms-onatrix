@@ -9,17 +9,20 @@
         <div class="form-container">
             <div class="group-container">
                 <div class="group">
-                    <input asp-for="Name" type="text" placeholder="Name" />
+                    <input id="name" asp-for="Name" type="text" placeholder="Name" />
                     <span asp-validation-for="Name"></span>
+                    <span class="span-icon-name"></span>
                 </div>
                 <div class="group">
-                    <input asp-for="QEmail" type="text" placeholder="Email" />
+                    <input id="email" asp-for="QEmail" type="text" placeholder="Email" />
                     <span asp-validation-for="QEmail"></span>
+                    <span class="span-icon-email"></span>
                 </div>
             </div>
             <div class="group">
-                <textarea asp-for="Question" type="text" placeholder="Question"></textarea>
+                <textarea id="message" asp-for="Question" type="text" placeholder="Question"></textarea>
                 <span asp-validation-for="Question"></span>
+                <span class="span-icon-message"></span>
             </div>
             <button type="submit" class="c-sub-2">
                 @{
@@ -36,3 +39,7 @@
         </div>
     </section>
 }
+<script type="module">
+    import { initFormValidation } from '/js/formValidationHandler.js'
+    initFormValidation();
+</script>

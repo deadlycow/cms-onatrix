@@ -8,26 +8,29 @@
 <link href="/css/_callbackFormLarge.css" rel="stylesheet" asp-append-version="true" />
 @using (Html.BeginUmbracoForm<FormController>(nameof(FormController.CallBackSubmit)))
 {
-    <div class="requestFormLarge">
+    <div class="requestFormLarge" id="request">
         <p class="c-label">@formSettings?.CallBackHeader</p>
         <h2>@formSettings?.CallBackTitle</h2>
         <p class="c-bt">@formSettings?.CallBackText </p>
         <div class="input-group">
             <div class="group">
-                <input asp-for="Name" type="text" placeholder="Name" />
+                <input id="name" asp-for="Name" type="text" placeholder="Name" />
                 <span asp-validation-for="Name"></span>
+                <span class="span-icon-name"></span>
             </div>
             <div class="group">
-                <input asp-for="PhoneNumber" type="text" placeholder="Phone" />
+                <input id="phoneNumber" asp-for="PhoneNumber" type="text" placeholder="Phone" />
                 <span asp-validation-for="PhoneNumber"></span>
+                <span class="span-icon-phoneNumber"></span>
             </div>
             <div class="group">
-                <input asp-for="Email" type="text" placeholder="Email" />
+                <input id="email" asp-for="Email" type="text" placeholder="Email" />
                 <span asp-validation-for="Email"></span>
+                <span class="span-icon-email"></span>
             </div>
             <div class="group">
                 <div class="select-wrapper">
-                    <select asp-for="Option">
+                    <select id="option" asp-for="Option">
                         <option value="" disabled selected>Select a callback reason</option>
                         @{
                             if (formSettings?.CallBackOptions != null)
@@ -40,6 +43,7 @@
                         }
                     </select>
                     <span asp-validation-for="Option"></span>
+                    <span class="span-icon-option"></span>
                 </div>
             </div>
         </div>
@@ -57,3 +61,8 @@
         </button>
     </div>
 }
+
+<script type="module">
+    import { initFormValidation} from '/js/formValidationHandler.js';
+    initFormValidation();
+</script>

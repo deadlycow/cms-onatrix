@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Onatrix.Models.CallBackModel>;
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Onatrix.Models.CallBackModel>
 @using Onatrix.Controllers
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
@@ -8,44 +8,48 @@
 <link href="/css/_callbackForm.css" rel="stylesheet" asp-append-version="true" />
 @using (Html.BeginUmbracoForm<FormController>(nameof(FormController.CallBackSubmit)))
 {
-    <div class="requestForm">
-        <h3>@formSettings?.CallBackHeader</h3>
+    <div class="requestForm" id="request">
+        <h3> @formSettings?.CallBackHeader </h3>
         <div class="input-group">
-            <p class="c-form-p">@formSettings?.CallBackText</p>
+            <p class="c-form-p"> @formSettings?.CallBackText </p>
             <div class="group">
-                <input asp-for="Name" type="text" placeholder="Name" />
+                <input id="name" asp-for="Name" type="text" placeholder="Name" />
                 <span asp-validation-for="Name"></span>
+                <span class="span-icon-name"></span>
             </div>
             <div class="group">
-                <input asp-for="Email" type="text" placeholder="Email address" />
+                <input id="email" asp-for="Email" type="text" placeholder="Email address" />
                 <span asp-validation-for="Email"></span>
+                <span class="span-icon-email"></span>
             </div>
             <div class="group">
-                <input asp-for="PhoneNumber" type="text" placeholder="Phone" />
+                <input id="phoneNumber" asp-for="PhoneNumber" type="text" placeholder="Phone" />
                 <span asp-validation-for="PhoneNumber"></span>
+                <span class="span-icon-phoneNumber"></span>
             </div>
             <div class="group">
                 <div class="select-wrapper">
-                    <select asp-for="Option">
-                        <option value="" disabled selected>Select a callback reason</option>
+                    <select id="option" asp-for="Option">
+                        <option value="" disabled selected> Select a callback reason </option>
                         @{
                             if (formSettings?.CallBackOptions != null)
                             {
                                 foreach (var option in formSettings.CallBackOptions)
                                 {
-                                    <option value="@option">@option</option>
+                                    <option value="@option"> @option </option>
                                 }
                             }
                         }
                     </select>
                     <span asp-validation-for="Option"></span>
+                    <span class="span-icon-option"></span>
                 </div>
             </div>
             <button class="c-sub-2" type="submit">
                 @{
                     if (TempData["CallBackSuccess"] != null)
                     {
-                        <span>@TempData["CallBackSuccess"]</span>
+                        <span> @TempData["CallBackSuccess"] </span>
                     }
                     else
                     {
@@ -56,3 +60,8 @@
         </div>
     </div>
 }
+
+<script type="module">
+    import { initFormValidation } from '/js/formValidationHandler.js';
+    initFormValidation();
+</script>
