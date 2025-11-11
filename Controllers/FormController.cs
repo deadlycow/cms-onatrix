@@ -34,7 +34,7 @@ public class FormController(
     if (success)
       TempData["SupportSuccess"] = "Thank you! We'll get back to you soon.";
 
-    return RedirectToCurrentUmbracoPage();
+    return Redirect($"{CurrentPage?.Url()}#support");
   }
   public IActionResult CallBackSubmit(CallBackModel form)
   {
@@ -53,7 +53,8 @@ public class FormController(
     var success = _formService.CreateCallBackRequest(form);
     if (success)
       TempData["CallBackSuccess"] = "Thank you! We'll call you soon.";
-    return RedirectToCurrentUmbracoPage();
+    return Redirect($"{CurrentPage?.Url()}#request");
+
   }
   public IActionResult QuestionSubmit(QuestionModel form)
   {
@@ -65,6 +66,6 @@ public class FormController(
     var success = _formService.CreateQuestionRequest(form);
     if (success)
       TempData["QuestionSuccess"] = "Thank you for your question. We'll get back to you soon.";
-    return CurrentUmbracoPage();
+    return Redirect($"{CurrentPage?.Url()}#questionSection");
   }
 }
