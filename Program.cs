@@ -6,8 +6,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton(x => new EmailClient(builder.Configuration["ACS:ConnectionString"]));
 builder.Services.AddTransient<IFormService, FormService>();
-builder.Services.AddScoped<EmailService>();
-//builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
