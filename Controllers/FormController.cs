@@ -67,7 +67,7 @@ public class FormController(
     var success = _formService.CreateQuestionRequest(form);
     if (success)
     {
-      await _emailService.SendConfirmationEmailAsync(form.Email!);
+      await _emailService.SendConfirmationEmailAsync(form.QEmail!);
       TempData["QuestionSuccess"] = "Thank you for your question. We'll get back to you soon.";
     }
     return Redirect($"{CurrentPage?.Url()}#questionSection");
