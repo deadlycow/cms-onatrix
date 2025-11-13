@@ -20,11 +20,11 @@ public class FormController(
     ServiceContext services,
     AppCaches appCaches,
     IProfilingLogger profilingLogger,
-    IPublishedUrlProvider publishedUrlProvider, IPublishedContentQuery contentQuery, IFormService formService, EmailService emailService) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    IPublishedUrlProvider publishedUrlProvider, IPublishedContentQuery contentQuery, IFormService formService, IEmailService emailService) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
   private readonly IFormService _formService = formService;
   private readonly IPublishedContentQuery _contentQuery = contentQuery;
-  private readonly EmailService _emailService = emailService;
+  private readonly IEmailService _emailService = emailService;
   public async Task<IActionResult> SupportSubmit(SupportModel form)
   {
     if (!ModelState.IsValid)
